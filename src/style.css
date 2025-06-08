@@ -1,0 +1,1043 @@
+/* Reset dan styling dasar */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container utama */
+.app-container {
+    width: 360px;
+    height: 720px;
+    background-color: #F7F9FC;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Header */
+.header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+}
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    overflow: hidden;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+.greeting, .user-name {
+    font-size: 18px;
+}
+.greeting { font-weight: 600; }
+.user-name { font-weight: bold; }
+.header .greeting{
+  color:#000;      /* hitam penuh */
+  font-weight:700; /* opsional: tetap tebal */
+}
+.header .user-name{
+  color:#000;      /* hitam penuh */
+  font-weight:700; /* opsional: tetap tebal */
+}
+/* Content */
+.content {
+    flex-grow: 1;
+    padding: 10px 20px 80px;
+    height: calc(100% - 30px);
+    overflow-y: auto;
+}
+
+/* Card umum */
+.card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Calories Card */
+.calories-circle {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.calories-message {
+  font-weight: bold;
+}
+
+.atur-kalori-btn {
+  background-color: #5b78f6;
+  color: white;
+  padding: 10px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 12px;
+}
+
+.atur-kalori-btn:hover {
+  background-color: #3a5be0;
+}
+
+.calories-message { font-weight: bold; font-size: 16px; margin-bottom: 8px; }
+.calories-subtitle { color: #888; font-size: 12px; margin-bottom: 15px; }
+.calories-visual { display: flex; align-items: center; justify-content: space-between; margin: 20px 0; }
+.calories-circle {
+    width: 120px; height: 120px;
+    background-color: #FFE500;
+    border-radius: 50%;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    color: #333;
+}
+.calories-number { font-size: 24px; font-weight: bold; }
+.calories-label { font-size: 12px; }
+.calories-breakdown { flex-grow: 1; padding-left: 20px; }
+.breakdown-item { display: flex; align-items: center; margin-bottom: 10px; font-size: 14px; }
+.goal-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.goal-dot.goal { background-color: #4B47FF; }
+.goal-dot.exercise { background-color: #A454FF; }
+.goal-dot.food { background-color: #FF5757; }
+
+/* Calculator Card */
+.calculator-card { display: flex; align-items: center; padding: 15px; }
+.calculator-icon {
+    width: 40px; height: 40px;
+    background-color: #FF9AAA;
+    border-radius: 10px;
+    display: flex; justify-content: center; align-items: center;
+    margin-right: 15px; font-size: 20px;
+}
+.calculator-text { flex-grow: 1; }
+.calculator-title { font-weight: bold; font-size: 16px; margin-bottom: 4px; }
+.calculator-subtitle { color: #888; font-size: 12px; }
+.arrow-icon { color: #ccc; font-size: 24px; }
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: absolute; bottom: 0; width: 100%; height: 70px;
+    background-color: white;
+    display: flex; justify-content: space-around; align-items: center;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+.bottom-nav a {
+  text-decoration: none !important;
+}
+.nav-item {
+    display: flex; flex-direction: column; align-items: center;
+    width: 25%; padding: 8px 0; cursor: pointer;
+}
+.nav-icon {
+    width: 30px; height: 30px; border-radius: 50%;
+    background-color: #ffac5f;
+    display: flex; justify-content: center; align-items: center;
+    margin-bottom: 5px; color: white; font-size: 16px;
+}
+.nav-label { font-size: 12px; color: #888; }
+.nav-item.active .nav-label { color: #FF8A2B; font-weight: bold; }
+.nav-item.active .nav-icon { background-color: #FF8A2B; }
+
+/* Pages */
+.page { display: none; }
+.page.active { display: block; }
+
+/* Recipe Page */
+.clear-search {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+  font-size: 16px;
+}
+
+
+.recipe-item {
+    display: flex; align-items: center; margin-bottom: 15px;
+}
+.recipe-image {
+    width: 80px; height: 80px;
+    background-color: #f0f0f0; border-radius: 12px;
+    margin-right: 15px;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 24px;
+}
+.recipe-info { flex-grow: 1; }
+.recipe-title { font-weight: bold; font-size: 16px; margin-bottom: 4px; }
+.recipe-details { display: flex; font-size: 12px; color: #888; }
+.recipe-stat { display: flex; align-items: center; margin-right: 10px; }
+.recipe-stat span { margin-left: 4px; }
+
+/* Workout Page */
+.category-scroll {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.category-chip {
+  flex-shrink: 0;
+  background: #eee;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.category-chip.active {
+  background: #ff8a2b;
+  color: white;
+  font-weight: bold;
+}
+
+.workout-box {
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.workout-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.workout-meta {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+
+.workout-categories {
+    display: flex; overflow-x: auto; padding: 10px 0; margin-bottom: 15px;
+}
+.workout-category {
+    padding: 10px 15px; background-color: #f0f0f0;
+    border-radius: 20px; margin-right: 10px; font-size: 14px;
+    white-space: nowrap; cursor: pointer;
+}
+.workout-category.active { background-color: #FF8A2B; color: white; }
+.workout-card {
+    position: relative; height: 160px; border-radius: 16px;
+    overflow: hidden; margin-bottom: 15px;
+    background-color: #f0f0f0;
+    display: flex; align-items: flex-end; cursor: pointer;
+}
+.workout-overlay {
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    width: 100%; padding: 15px; color: white;
+}
+.workout-title { font-weight: bold; font-size: 18px; margin-bottom: 5px; }
+.workout-info { display: flex; font-size: 12px; }
+.workout-stat { display: flex; align-items: center; margin-right: 15px; }
+/* Workout Grid */
+.workout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Workout Box Hover Effect */
+.workout-box {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Video Unavailable Styling */
+.video-unavailable {
+  background: #f5f5f5;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.video-unavailable p {
+  margin: 10px 0;
+  color: #666;
+}
+
+/* Workout Modal Styles */
+.workout-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.video-container {
+  margin: 20px 0;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.section {
+  margin: 20px 0;
+}
+
+.section h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.section ul, .section ol {
+  padding-left: 20px;
+}
+
+.section li {
+  margin-bottom: 8px;
+} 
+/* Chatbot Page */
+.chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 70px; /* agar tidak tertabrak bottom nav */
+  overflow: hidden;
+}
+.chat-container {
+    height: 100%; display: flex; flex-direction: column;
+}
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 0 20px 10px 20px;
+}
+.message {
+    max-width: 75%; padding: 10px 15px;
+    border-radius: 18px; margin-bottom: 10px; font-size: 14px;
+}
+#loading-message {
+    background-color: #f0f0f0;
+    color: #888;
+    font-style: italic;
+}
+.bot-message {
+    background-color: #f0f0f0; color: #333;
+    border-top-left-radius: 5px; align-self: flex-start;
+}
+.user-message {
+    background-color: #FF8A2B; color: white;
+    border-top-right-radius: 5px; align-self: flex-end;
+    margin-left: auto;
+}
+.chat-input {
+  display: flex;
+  gap: 10px;
+  padding: 12px 20px;
+  background-color: white;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+.chat-input input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+}
+.chat-input button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #FF8A2B;
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal */
+.modal {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 9999;
+}
+.modal.hidden { display: none; }
+.modal-content {
+    background: white; padding: 20px; border-radius: 12px;
+    max-width: 320px; width: 80%; position: relative;
+    white-space: pre-line;
+}
+.modal-content .close {
+    position: absolute; top: 10px; right: 15px;
+    font-size: 24px; cursor: pointer;
+}
+
+/* Tambahkan kode CSS berikut ke file style.css */
+
+/* Memperbaiki styling search input */
+.search-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 16px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 40px;
+    border: none;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.search-input:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Animasi untuk hasil pencarian */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.recipe-item {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Pesan tidak ditemukan */
+.not-found-message {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-style: italic;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 10px 0;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Highlight hasil pencarian */
+.highlight {
+    background-color: rgba(255, 138, 43, 0.2);
+    padding: 2px 0;
+    border-radius: 3px;
+}
+
+* BMI Calculator Styles */
+.bmi-calories {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+.bmi-calories ul li {
+  margin: 4px 0;
+}
+
+#bmi-calculator-page {
+    padding-bottom: 20px;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.back-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.bmi-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.bmi-subtitle {
+    color: #888;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.bmi-form {
+    background-color: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.gender-group {
+    margin-bottom: 25px;
+}
+
+.gender-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.gender-options {
+    display: flex;
+    gap: 15px;
+}
+
+.gender-option {
+    flex: 1;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.gender-option.active {
+    background-color: #FFE8D6;
+    border: 2px solid #FF8A2B;
+}
+
+.gender-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.calculate-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #FF8A2B;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calculate-btn:hover {
+    background-color: #E07A25;
+}
+
+.bmi-result {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.bmi-result.hidden {
+    display: none;
+}
+
+.result-card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 25px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.result-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.bmi-value {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #FF8A2B;
+}
+
+.bmi-category {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.bmi-scale {
+    margin-bottom: 20px;
+}
+
+.scale-bar {
+    height: 10px;
+    background: linear-gradient(to right, #4B9AFF, #6FBE45, #FFCC33, #FF5757);
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    background-color: #333;
+    border: 3px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: left 0.5s ease-out;
+}
+
+.scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #888;
+}
+
+.bmi-advice {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.recalculate-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.recalculate-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* CSS untuk Daily Activity Page */
+
+/* Judul halaman */
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.page-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px 0 10px;
+}
+
+/* Daftar icon aktivitas */
+.activity-icons {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+
+.activity-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f3f4f6;
+    margin: 0 5px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.activity-icon.active {
+    background-color: #4169E1;
+    color: white;
+}
+
+.activity-icon .icon {
+    font-size: 22px;
+    margin-bottom: 3px;
+}
+
+.activity-icon .label {
+    font-size: 11px;
+    text-align: center;
+}
+
+/* Selector intensitas */
+.intensity-selector {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.intensity-level {
+    flex: 1;
+    padding: 12px 0;
+    text-align: center;
+    background-color: #f3f4f6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.intensity-level.active {
+    background-color: #4169E1;
+    color: white;
+}
+
+/* Selector durasi */
+.duration-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.duration-option {
+    padding: 12px;
+    text-align: center;
+    background-color: #f3f4f6;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.duration-option.active {
+    background-color: #4169E1;
+    color: white;
+}
+
+.duration-option input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Button */
+.calculate-btn, .primary-btn, .secondary-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.calculate-btn, .primary-btn {
+    background-color: #4169E1;
+    color: white;
+}
+
+.secondary-btn {
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+/* Hasil aktivitas */
+.activity-result-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.result-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.calories-value {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4169E1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.unit {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.activity-summary {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.summary-item:last-child {
+    margin-bottom: 0;
+}
+
+.summary-label {
+    font-weight: bold;
+    color: #666;
+}
+
+.activity-advice {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    text-align: center;
+    padding: 10px;
+}
+
+.result-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Back button */
+.back-button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.back-icon {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.login-page {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-page input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+
+.login-page button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ff7f50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logout-button {
+  margin-top: 10px;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  background-color: #d32f2f; /* merah elegan */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #b71c1c; /* lebih gelap saat hover */
+}
+
+.profile-pic {
+  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  background-color: #eee;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 16px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 16px;
+  min-height: 100px; /* 👈 menjaga ketinggian minimum sama */
+}
+
+.calculator-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+
+.calculator-text {
+  flex: 1;
+  margin-left: 16px;
+  min-height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.calculator-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.calculator-subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-top: 4px;
+}
