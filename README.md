@@ -1,6 +1,6 @@
 # COREFIT - Health & Fitness App
 
-Aplikasi kesehatan dan fitness dengan integrasi AI Deepseek untuk konsultasi kesehatan.
+Aplikasi kesehatan dan fitness dengan integrasi AI Deepseek untuk konsultasi kesehatan profesional.
 
 ## 🚀 Features
 - BMI Calculator
